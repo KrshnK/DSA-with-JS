@@ -1,6 +1,6 @@
-# DSA with JS
+# My DSA Journey with JavaScript (DSA-with-JS)
 
-This repository contains JavaScript code for implementing various data structures and algorithms (DSA). 
+This repository documents my exploration of data structures and algorithms (DSA) using JavaScript. It serves as a personal playground to learn, experiment, and implement various DSA concepts. 
 
 ### Getting Started
 
