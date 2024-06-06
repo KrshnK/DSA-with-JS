@@ -63,4 +63,4 @@ Please refer to the GitHub contribution guidelines for more details: [https://do
 
 ### License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
