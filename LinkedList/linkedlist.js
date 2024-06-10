@@ -98,3 +98,32 @@ LinkedList.prototype.deleteByKey = function(key){
         current = current.next
     }
 }
+
+// Search operation
+
+LinkedList.prototype.search = function(key){
+    let current = this.head
+
+    while (current) {
+        if (current.data === key) {
+            return true
+        }
+    }
+    return false
+}
+
+// traversal
+
+LinkedList.prototype.printList = function(){
+    let current = this.head
+
+    let listValues = []
+    if (!current) {
+        console.log("list is empty");
+    }
+    while(current){
+        listValues.push(current.data)
+        current = current.next
+    }
+    console.log(listValues.join(" -> "))
+}
