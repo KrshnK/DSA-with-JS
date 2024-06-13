@@ -126,4 +126,20 @@ DoublyLinkedlist.prototype.insertAtEnd = function(data){
     }
  }
 
- // traversal
+ // traversal 
+
+ DoublyLinkedlist.prototype.printList = function(){
+    let current = this.head
+
+    let listValues = []
+    if(!current){
+        console.log("List is empty!");
+    }
+    while(current){
+        listValues.push(current.data)
+        current = current.next
+    }
+    console.log(listValues.join(" <- -> "));
+ }
+
+ 
