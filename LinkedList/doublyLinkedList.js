@@ -67,3 +67,21 @@ DoublyLinkedlist.prototype.insertAtEnd = function(data){
         this.tail = newNode
     }
  }
+
+ // Delete First Node
+
+ DoublyLinkedlist.prototype.deleteFirstNode = function(){
+
+    if(!this.head){
+        return // nothing to delete
+    }
+
+    if(this.head === this.tail){
+        this.head = null
+        this.tail = null
+    }
+
+    this.head = head.next
+    this.head.prev = null
+    
+ }
