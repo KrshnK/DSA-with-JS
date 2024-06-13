@@ -45,3 +45,25 @@ DoublyLinkedlist.prototype.insertAtEnd = function(data){
     }
 
 }
+
+// insert after given key
+
+ DoublyLinkedlist.prototype.insertAfter = function(data,prevNode){
+    if (prevNode == null) {
+        console.log("Invalid prev Node");
+        return
+    }
+
+    const newNode = new Node(data,prevNode.next,prevNode)
+
+    if (prevNode.next !== null) {
+        prevNode.next.prev = newNode
+    }
+
+    prevNode.next = newNode
+
+    // Tail
+    if (newNode === null) {
+        this.tail = newNode
+    }
+ }
