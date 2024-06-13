@@ -81,7 +81,25 @@ DoublyLinkedlist.prototype.insertAtEnd = function(data){
         this.tail = null
     }
 
-    this.head = head.next
+    this.head = this.head.next
     this.head.prev = null
     
+ }
+
+ // Delete Last Node
+
+ DoublyLinkedlist.prototype.deleteLastNode = function(){
+
+    if(!this.tail){
+        return // nothing to delete
+    }
+
+    if(this.head === this.tail){
+        this.head = null
+        this.tail = null
+    }
+
+    this.tail = this.tail.prev
+    this.tail.next = null
+
  }
