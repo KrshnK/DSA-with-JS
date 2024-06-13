@@ -58,21 +58,22 @@ DoublyLinkedlist.prototype.insertAtEnd = function(data){
 // insert after given key
 
  DoublyLinkedlist.prototype.insertAfter = function(data,prevNode){
-    if (prevNode == null) {
+    const prevAdd = this.findAddress(prevNode)
+    if (prevAdd == null) {
         console.log("Invalid prev Node");
         return
     }
 
-    const newNode = new Node(data,prevNode.next,prevNode)
+    const newNode = new Node(data,prevAdd.next,prevAdd)
 
-    if (prevNode.next !== null) {
-        prevNode.next.prev = newNode
+    if (prevAdd.next !== null) {
+        prevAdd.next.prev = newNode
     }
 
-    prevNode.next = newNode
+    prevAdd.next = newNode
 
     // Tail
-    if (newNode === null) {
+    if (newNode.next === null) {
         this.tail = newNode
     }
  }
@@ -162,4 +163,13 @@ DoublyLinkedlist.prototype.insertAtEnd = function(data){
  DLL.printList()
 
  DLL.insertAfter(5,4)
+ DLL.printList()
+ 
+ DLL.deleteFirstNode()
+ DLL.printList()
+
+ DLL.deleteLastNode()
+ DLL.printList()
+
+ DLL.reverse()
  DLL.printList()
