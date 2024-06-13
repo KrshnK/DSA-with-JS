@@ -11,6 +11,15 @@ class DoublyLinkedlist{
         this.head = null
         this.tail = null
     }
+
+    findAddress(data){
+        let current = this.head
+        while(current){
+            if(current.data == data) break;
+            current = current.next
+        }
+        return current
+    }
 }
 
 // insert at beginning
@@ -142,4 +151,15 @@ DoublyLinkedlist.prototype.insertAtEnd = function(data){
     console.log(listValues.join(" <- -> "));
  }
 
- 
+ // usage
+
+ const DLL = new DoublyLinkedlist()
+ DLL.insertAtBeginning(2)
+ DLL.insertAtEnd(4)
+ DLL.insertAtEnd(6)
+ DLL.insertAtEnd(9)
+ DLL.insertAtEnd(12)
+ DLL.printList()
+
+ DLL.insertAfter(5,4)
+ DLL.printList()
