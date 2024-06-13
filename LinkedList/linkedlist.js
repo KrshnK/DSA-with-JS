@@ -9,6 +9,15 @@ class LinkedList {
     constructor() {
         this.head = null
     }
+
+    findAddress(data){
+        let current = this.head
+        while(current){
+            if(current.data == data) break;
+            current = current.next
+        }
+        return current
+    }
 }
 
 // Insert at the beginning
@@ -37,13 +46,15 @@ LinkedList.prototype.insertAtEnd = function (data) {
 // Insert at given node
 
 LinkedList.prototype.insertAfter = function (prevNode, data) {
-    if (!prevNode) {
+    const prevAdd = this.findAddress(prevNode)
+    if (!prevAdd) {
         console.log("The given node can't be null");
         return
     }
-    const newNode = new Node(data, prevNode.next)
-    prevNode.next = newNode
+    const newNode = new Node(data, prevAdd.next)
+    prevAdd.next = newNode
 }
+
 
 // Delete the First Node
 
@@ -108,8 +119,9 @@ LinkedList.prototype.search = function(key){
         if (current.data === key) {
             return true
         }
+        current = current.next
     }
-    return false
+     return false
 }
 
 // traversal
@@ -123,6 +135,7 @@ LinkedList.prototype.printList = function(){
     }
     while(current){
         listValues.push(current.data)
+
         current = current.next
     }
     console.log(listValues.join(" -> "))
@@ -145,3 +158,31 @@ LinkedList.prototype.reverse = function (){
 
     this.head = prev
 }
+
+// usage
+
+const newLinkedList = new LinkedList()
+newLinkedList.insertAtBeginning(2)
+newLinkedList.insertAtEnd(4)
+newLinkedList.insertAtEnd(8)
+newLinkedList.insertAtEnd(6)
+newLinkedList.insertAtEnd(10)
+newLinkedList.printList()
+
+
+newLinkedList.insertAfter(2,12)
+newLinkedList.printList()
+
+newLinkedList.deleteFirstNode()
+newLinkedList.printList()
+
+newLinkedList.deleteLastNode()
+newLinkedList.printList()
+
+newLinkedList.deleteByKey(8)
+newLinkedList.printList()
+
+console.log(newLinkedList.search(6))
+
+newLinkedList.reverse()
+newLinkedList.printList()
