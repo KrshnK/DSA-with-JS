@@ -74,4 +74,48 @@ class BinarySearchTree {
         return node
     }
 
+    // Traversal 
+
+    inOrderTraversal(){ // In-Order
+        const result = []
+        this.inOrder(this.root,result)
+        return result
+    }
+
+    inOrder(node,result){
+        if(node !== null){
+            this.root.inOrder(node.left,result)
+            result.push(node.key)
+            this.inOrder(node.right,result)
+        }
+    }
+
+    preOrderTraversal(){ // Pre-Order
+        const result = []
+        this.preOrder(this.root,result)
+        return result
+    }
+
+    preOrder(node,result){
+        if(node !== null){
+            result.push(node.key)
+            this.root.preOrder(node.left,result)
+            this.preOrder(node.right,result)
+        }
+    }
+
+    postOrderTraversal(){ // Post-Order
+        const result = []
+        this.postOrder(this.root,result)
+        return result
+    }
+
+    postOrder(node,result){
+        if(node !== null){
+            this.root.postOrder(node.left,result)
+            result.push(node.key)
+            this.postOrder(node.right,result)
+        }
+    }
+
 }
