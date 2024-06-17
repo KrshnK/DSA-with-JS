@@ -20,7 +20,7 @@ const BreadthFirstTraversal = (root) => {
     }
 
     while(queue.length > 0){
-        const node = queue.shift()
+        const node = queue.shift() // point of optimization
         values.push(node.key)
 
         if(node.left !== null){
