@@ -1,5 +1,5 @@
 // ReverseString.test.js
-const revString = require('./ReverseString');
+const revString = require('../Problems/Recursion/ReverseString');
 
 test('reverse string function', () => {
     expect(revString('Hello')).toBe('olleH');
